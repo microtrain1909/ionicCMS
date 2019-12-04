@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>MicroTrain1909 Article</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item *ngIf="!article">
+        <ion-label ion-text-center>
+          <ion-spinner></ion-spinner>
+        </ion-label>
+      </ion-item>
+    
+      <ion-card *ngIf="article">
+    
+        <ion-card-header>
+          <ion-card-title>{{ article.title }}</ion-card-title>
+        </ion-card-header>
+        
+        <ion-list>
+          <ion-item>{{ article.keywords }}</ion-item>
+          <ion-item>{{ article.body }}</ion-item>
+          <ion-item>{{ article.created }}</ion-item>
+        </ion-list>
+    
+      </ion-card>
+    
+      <ion-fab vertical="bottom" horizontal="end">
+        <ion-fab-button  color="secondary">
+          <ion-icon name="arrow-dropleft"></ion-icon>
+        </ion-fab-button>
+    
+        <ion-fab-list side="start" *ngIf="article">
+    
+          <ion-fab-button color="light" [routerLink]="['/article-edit', article._id]">
+            <ion-icon name="create"></ion-icon>
+          </ion-fab-button>
+    
+          <ion-fab-button color="danger" [routerLink]="['/article-delete', article._id]">
+            <ion-icon name="trash"></ion-icon>
+          </ion-fab-button>
+    
+        </ion-fab-list>
+      </ion-fab>
+
+</ion-content>

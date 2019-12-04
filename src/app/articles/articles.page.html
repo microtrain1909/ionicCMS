@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>MicroTrain1909 Articles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngIf="!articles">
+    <ion-label ion-text-center>
+      <ion-spinner></ion-spinner>
+    </ion-label>
+  </ion-item>
+
+  <ion-list *ngIf="articles">
+    <ion-item *ngFor="let article of articles" [routerLink]="['/article', article._id]">
+      <ion-label>{{ article.title }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button  color="secondary" [routerLink]="['/article-create']">
+      <ion-icon name="paper"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>  
+
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Delete MicroTrain1909 Article</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="article">
+
+    <ion-card-header>
+      <ion-card-title color="danger">
+        Are you sure you want to delete {{article.title}}?
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button color="danger" expand="full" (click)="deleteArticle(article._id)">
+        Delete {{article.title}}
+      </ion-button>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>
