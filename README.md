@@ -33,8 +33,12 @@ Article pages, user:users, become article:articles
 > .gitignore, package-lock.json,user.service.ts, auth.service.ts, login, logut, register
 
 *Change directory names in Terminal*
+
  ```find . -type d -name "*user*" | while read f; do mv $f $(echo $f | sed 's/user/article/'); done```
+
+
 *Change file names in Terminal*
+
 ```find . -type f -name "*user*" | while read f; do mv $f $(echo $f | sed 's/user/article/'); done```
 
 Ensure the following are wired, created and/or changed accordingly.
